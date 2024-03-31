@@ -1,0 +1,5 @@
+Usage:
+    dist_kernel.py -path "raw_data_path" -H 'float' -N 'segments num'
+
+Example:
+    nohup python dist_kernel.py -path '/data2/mytu/codes_zebrafish/feature_modify/pkl2npy/features_raw100.npy' -H '0.5' -N 100 > nohup100.out 2>&1 &

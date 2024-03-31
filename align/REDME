@@ -1,0 +1,6 @@
+Usages:
+    *.py -a path (-f path.txt)
+Examples:
+nohup python align_SYSU.py -f '/data2/zhshen/data/zebra_fish/block5/index_list_fish12.txt' > sysu5.out 2>&1 &
+nohup python fish_to_mat_old.py -f index1046-1177.txt > mat1046-1177.out 2>&1 &
+nohup python align_tp_new650.py -f indexHL101-25.txt > out101-25 2>&1 &
