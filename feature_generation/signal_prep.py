@@ -34,7 +34,7 @@ class BaselineRemoval():
         - concatenate all of these arrays created through loop, as a master array. This is done through (np.vstack)
         - transpose the master array, so that its more like a tabular form(np.transpose)'''
         input_array_for_poly = np.array(input_array_for_poly)
-        X = np.transpose(np.vstack((input_array_for_poly**k for k in range(degree_for_poly+1))))
+        X = np.transpose(np.vstack([input_array_for_poly**k for k in range(degree_for_poly+1)]))
         return np.linalg.qr(X)[0][:,1:]
 
     def IModPoly(self,degree=2,repitition=100,gradient=0.001):

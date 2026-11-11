@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>登录 - 斑马鱼全脑钙成像神经计算分析系统</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+<div class="login-page">
+  <div class="login-left">
+    <div class="row"><div class="brand-logo" style="width:46px;height:46px;font-size:20px">脑</div>
+      <div><div style="font-size:15px;color:#9fb3d6;letter-spacing:2px">版本 V1.0</div></div></div>
+    <h1>斑马鱼全脑钙成像神经计算分析系统</h1>
+    <p>面向斑马鱼幼鱼全脑钙荧光成像数据，提供从原始图像序列到神经活动特征、再到深度学习表型识别的一体化计算分析平台。</p>
+    <div class="login-feats">
+      <div><b>图像配准</b>ANTs 弹性配准运动校正与标准脑模板映射</div>
+      <div><b>信号提取</b>脑区钙信号去噪、基线校正与 ΔF/F 归一化</div>
+      <div><b>特征计算</b>钙峰、放电强度、同步连接等 13 类神经活动特征</div>
+      <div><b>智能建模</b>高斯核空间平滑与 BrainNet 深度网络分类预测</div>
+    </div>
+    <svg class="neuron-bg" width="520" height="420" viewBox="0 0 520 420" fill="none" stroke="#5aa2ff" stroke-width="1.4">
+      <circle cx="120" cy="120" r="10"/><circle cx="260" cy="80" r="7"/><circle cx="380" cy="160" r="12"/><circle cx="230" cy="250" r="9"/>
+      <circle cx="420" cy="300" r="8"/><circle cx="110" cy="320" r="7"/><circle cx="330" cy="370" r="6"/>
+      <path d="M120 120 L260 80 L380 160 L230 250 L120 120 M230 250 L420 300 L380 160 M230 250 L110 320 M230 250 L330 370 L420 300"/>
+    </svg>
+  </div>
+  <div class="login-right">
+    <form class="login-card" id="f">
+      <h2>用户登录</h2>
+      <div class="muted small">请输入账号与密码进入系统</div>
+      <div class="field"><label>用户名</label><input type="text" id="u" value="admin" autocomplete="username"></div>
+      <div class="field"><label>密码</label><input type="password" id="p" value="" placeholder="请输入密码" autocomplete="current-password"></div>
+      <div id="err" style="color:#e5484d;font-size:12.5px;margin-top:10px;min-height:16px"></div>
+      <button class="btn primary" type="submit">登 录</button>
+      <div class="muted small center" style="margin-top:16px">斑马鱼全脑钙成像神经计算分析系统 V1.0</div>
+    </form>
+  </div>
+</div>
+<script>
+document.getElementById('f').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const r = await fetch('/api/login', {method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({username: document.getElementById('u').value, password: document.getElementById('p').value})});
+  const j = await r.json();
+  if (j.ok) location.href = '/'; else document.getElementById('err').textContent = j.error;
+});
+</script>
+</body>
+</html>
