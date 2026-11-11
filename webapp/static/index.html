@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>斑马鱼全脑钙成像神经计算分析系统</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">脑</div>
+      <div><div class="brand-name">斑马鱼全脑钙成像<br>神经计算分析系统</div><div class="brand-sub">版本 V1.0</div></div>
+    </div>
+    <nav class="menu" id="menu"></nav>
+  </aside>
+  <section class="main">
+    <header class="topbar">
+      <div class="crumb" id="crumb"></div>
+      <div class="spacer"></div>
+      <div class="top-chip" id="taskChip"><span class="dot"></span><span>无运行任务</span></div>
+      <div class="top-chip" id="clock"></div>
+      <div class="user"><div class="avatar" id="avatar">管</div><span id="uname"></span>
+        <button class="btn sm" id="logout">退出</button></div>
+    </header>
+    <div class="content" id="content"></div>
+  </section>
+</div>
+<div class="toast-wrap" id="toasts"></div>
+<script src="/static/vendor/echarts.min.js"></script>
+<script src="/static/js/app.js"></script>
+<script src="/static/js/pages/dashboard.js"></script>
+<script src="/static/js/pages/experiments.js"></script>
+<script src="/static/js/pages/templates.js"></script>
+<script src="/static/js/pages/preprocess.js"></script>
+<script src="/static/js/pages/register.js"></script>
+<script src="/static/js/pages/atlas.js"></script>
+<script src="/static/js/pages/signal.js"></script>
+<script src="/static/js/pages/feature.js"></script>
+<script src="/static/js/pages/library.js"></script>
+<script src="/static/js/pages/kernel.js"></script>
+<script src="/static/js/pages/dataset.js"></script>
+<script src="/static/js/pages/train.js"></script>
+<script src="/static/js/pages/evaluate.js"></script>
+<script src="/static/js/pages/predict.js"></script>
+<script src="/static/js/pages/tasks.js"></script>
+<script src="/static/js/pages/settings.js"></script>
+<script>App.start();</script>
+</body>
+</html>
